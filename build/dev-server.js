@@ -31,7 +31,7 @@ var devMiddleware = require('webpack-dev-middleware')(compiler, {
 })
 
 var hotMiddleware = require('webpack-hot-middleware')(compiler, {
-  log: () => {},
+  log: () => { },
   heartbeat: 2000
 })
 // force page reload when html-webpack-plugin template changes
@@ -66,6 +66,7 @@ var staticPath = path.posix.join(config.dev.assetsPublicPath, config.dev.assetsS
 app.use(staticPath, express.static('./static'))
 
 var uri = 'http://localhost:' + port
+// var uri = 'http://1.1.1.1:' + port
 
 var _resolve
 var readyPromise = new Promise(resolve => {

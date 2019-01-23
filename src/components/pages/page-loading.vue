@@ -1,6 +1,8 @@
 <template>
-  <div class="page-loading" v-if="show">
-    <spinner :type="spinnerType" class="load"></spinner>
+  <div class="page-loading"
+       v-if="show">
+    <spinner :type="spinnerType"
+             class="load"></spinner>
   </div>
 </template>
 
@@ -17,22 +19,22 @@
         default: true
       }
     },
-    data() {
+    data () {
       return {
         spinnerType: 'dots',
       }
     },
     methods: {
-      setOverflow(show) {
+      setOverflow (show) {
         document.documentElement.style.overflow = show ? 'hidden' : 'scroll'
       }
     },
     watch: {
-      show(val) {
+      show (val) {
         this.setOverflow(val)
       }
     },
-    activated() {
+    activated () {
       this.setOverflow(this.show)
     }
   }

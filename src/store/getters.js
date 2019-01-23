@@ -8,16 +8,13 @@
  * export const getCount = state => state.count
  */
 
-/******user*****/
-
 const getUserInfo = state => state.userInfo
 const getToken = state => state.token
-const  getAddressInfo = state => state.addressInfo
-const isLogin= state => {
+const getAddressInfo = state => state.addressInfo
+const isLogin = state => {
   return state.token ? true : false
 }
 
-  /******tabbar*****/
-const getTabBarSelectIndex = state =>state.tabbar_selected
+const getTabBarSelectIndex = state => state.tabbar_selected
 
-export { getUserInfo,getToken,getAddressInfo,isLogin, getTabBarSelectIndex}
+export { getUserInfo, getToken, getAddressInfo, isLogin, getTabBarSelectIndex }

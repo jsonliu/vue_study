@@ -1,23 +1,23 @@
 <template>
-    <div class="main">
+  <div class="main">
 
-    </div>
+  </div>
 </template>
 
 <script type="text/ecmascript-6">
-    export default {
-        components: {},
-        data(){
-            return {}
-        },
-        created(){
+  export default {
+    components: {},
+    data () {
+      return {}
+    },
+    created () {
 
-        }
     }
+  }
 </script>
 
 <style lang="scss" scoped>
-	.main {
-		width: 100%;
-	}
+  .main {
+    width: 100%;
+  }
 </style>

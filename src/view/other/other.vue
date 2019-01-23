@@ -7,67 +7,52 @@
         <el-button @click="btnAction(2)">默认按钮2</el-button>
       </el-button-group>
     </div>
-
   </div>
-
-
-
 </template>
-
 <script type="text/ecmascript-6">
-
-import {mapGetters, mapActions} from 'vuex'
-
-import ElButton from "../../../node_modules/element-ui/packages/button/src/button";
-import ElButtonGroup from "../../../node_modules/element-ui/packages/button/src/button-group";
-
-
+  import { mapGetters, mapActions } from 'vuex'
+  import ElButton from "../../../node_modules/element-ui/packages/button/src/button";
+  import ElButtonGroup from "../../../node_modules/element-ui/packages/button/src/button-group";
   export default {
-    components:{
+    components: {
       ElButtonGroup,
       ElButton
-
     },
-    data(){
+    data () {
       return {
-
       }
     },
-    computed:{
+    computed: {
       ...mapGetters([
-          'getTabBarSelectIndex',
+        'getTabBarSelectIndex',
       ])
     },
-    methods:{
+    methods: {
       ...mapActions([
-          'saveTabBarSelect',
+        'saveTabBarSelect',
       ]),
-      btnAction(value){
+      btnAction (value) {
 
-          alert(value)
+        alert(value)
       }
     },
-    created(){
-
+    created () {
     },
-    activated(){
-//      this.$store.commit('changeSelect', 2)
-//      console.log('selectValue的值改变为:\n'+this.$store.getters.getIndex)
-
+    activated () {
+      //      this.$store.commit('changeSelect', 2)
+      //      console.log('selectValue的值改变为:\n'+this.$store.getters.getIndex)
       this.saveTabBarSelect(2)
-      console.log('selectValue的值改变为:\n'+this.getTabBarSelectIndex)
+      console.log('selectValue的值改变为:\n' + this.getTabBarSelectIndex)
     }
 
   }
 </script>
 
 <style lang="less" rel="stylesheet/less">
-  .btn-view{
+  .btn-view {
     /*margin: 0 auto;*/
     height: 100px;
     margin-top: 20px;
     text-align: center;
-
   }
-
 </style>

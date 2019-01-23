@@ -1,22 +1,18 @@
 /**
  * Created by jsonliu on 2017/10/1.
  */
-
-export default{
-
-  state:{
-    selected:0
+export default {
+  state: {
+    selected: 0
   },
-  getters:{
-    getIndex(state){
+  getters: {
+    getIndex (state) {
       return state.selected
     }
   },
-  actions:{
-
-  },
-  mutations:{
-    changeSelect(state,index){
+  actions: {},
+  mutations: {
+    changeSelect (state, index) {
       state.selected = index
     }
 

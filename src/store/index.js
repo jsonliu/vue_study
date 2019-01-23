@@ -6,18 +6,13 @@ import Vuex from 'vuex'
 
 Vue.use(Vuex)
 
-
-//分离 actions 、getters
-import * as actions from './actions'
-import * as getters from './getters'
-import types from './mutation-types'
-
+// 分离 actions 、getters
+// import * as actions from './actions'
+// import * as getters from './getters'
+// import types from './mutation-types'
 
 import tabbar from './modules/tabbar'
 import user from './modules/user'
-
-
-
 /*
  * Vuex 和单纯的全局对象有以下两点不同：
 
@@ -123,11 +118,10 @@ import user from './modules/user'
 //
 // })
 
-/*模块化使用*/
 export default new Vuex.Store({
   modules: {
     tabbar,
-    user,
+    user
   }
 })
 

@@ -1,21 +1,18 @@
 <template>
-    <div class="wx-main-view">
-      测试路由
-    </div>
+  <div class="wx-main-view">
+    测试路由
+  </div>
 </template>
-
 <script type="text/ecmascript-6">
-    export default {
-        components: {},
-        data(){
-            return {}
-        },
-        created(){
-
-        }
+  export default {
+    components: {},
+    data () {
+      return {}
+    },
+    created () {
     }
+  }
 </script>
 
 <style lang="less" rel="stylesheet/less">
-
 </style>

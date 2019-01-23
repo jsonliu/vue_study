@@ -1,12 +1,11 @@
 <template>
-  <div class="page-network-error" v-if="show">
+  <div class="page-network-error"
+       v-if="show">
     <i class="icon network-error"></i>
     <p class="network-error-text">亲，您的网络链接有问题</p>
   </div>
 </template>
-
 <script type="text/ecmascript-6">
-
   export default {
     props: {
       show: {
@@ -17,11 +16,8 @@
   }
 
 </script>
-
 <style lang="less" rel="stylesheet/less">
-
   @import "../../style/mixin";
-
   .page-network-error {
     display: flex;
     justify-content: center;
@@ -45,6 +41,5 @@
       font-size: 16px;
       color: #666;
     }
-
   }
 </style>

@@ -6,18 +6,20 @@
     <div class="content-view">
       <div class="select-view">
 
-        <select class="select" v-select2='options' v-model="selectValue"></select>
-        <br/>
+        <select class="select"
+                v-select2='options'
+                v-model="selectValue"></select>
+        <br />
         <!--<span v-text="'结果：'+selectValue"></span>-->
 
-
         <!--<my-component v-if="message" :message="message"></my-component>-->
-        <div class="test-view" v-clickhello>{{message}}</div>
+        <div class="test-view"
+             v-clickhello>{{message}}</div>
 
         <div class="actions">
-        <button @click="update">更新</button>
-        <button @click="uninstall">卸载</button>
-        <button @click="install">安装</button>
+          <button @click="update">更新</button>
+          <button @click="uninstall">卸载</button>
+          <button @click="install">安装</button>
         </div>
 
       </div>
@@ -29,21 +31,21 @@
 <script type="text/ecmascript-6">
   import AppHeader from 'components/common/header.vue'
   import $ from 'jquery'
-  import {select2} from 'select2'
+  import { select2 } from 'select2'
 
   let myComponent = { template: '<h1 v-clickhello>{{ message }}</h1>', props: { message: String } }
 
 
   export default {
-     ready(){
-       $('select').select2({
-         placeholder: "请选择"
-       });
-     },
+    ready () {
+      $('select').select2({
+        placeholder: "请选择"
+      });
+    },
     components: {
       AppHeader,
-      myComponent:myComponent
-//          select2
+      myComponent: myComponent
+      //          select2
     },
     // 指令的定义--- 局部
     directives: {
@@ -57,11 +59,11 @@
             el.dispatchEvent(new Event('change', { target: e.target })); //说好的双向绑定，竟然不安套路
           });
         },
-        update: function(el, binding, vnode) {
+        update: function (el, binding, vnode) {
           $(el).trigger("change");
         }
       },
-      clickhello:{
+      clickhello: {
         // 只调用一次，指令第一次绑定到元素时调用
         bind: function (el) { console.log('触发bind钩子函数！') },
         // 被绑定元素插入父节点时调用
@@ -74,7 +76,7 @@
         unbind: function (el) { console.log('触发unbind钩子函数！') }
       }
     },
-    data(){
+    data () {
       return {
         message: 'Hello! 大漠',
         selectValue: '你还没有选值',
@@ -89,10 +91,10 @@
         }
       }
     },
-    created(){
+    created () {
 
     },
-    methods:{
+    methods: {
       update: function () { this.message = 'Hi! 大漠' },
       uninstall: function () { this.message = '' },
       install: function () { this.message = 'Hello！W3cplus' }
@@ -104,30 +106,24 @@
 <style lang="less" rel="stylesheet/less">
   @import "../../../style/select2.min.css";
 
-  .inline-view{
-
-    .content-view{
-
-      .select-view{
+  .inline-view {
+    .content-view {
+      .select-view {
         margin-top: 20px;
-        .content{
+        .content {
           text-align: center;
-          padding:50px;
+          padding: 50px;
         }
-        .content *{
+        .content * {
           text-align: left;
         }
-        .select{
+        .select {
           width: 350px;
         }
       }
       .test-view {
         margin-top: 200px;
       }
-
     }
   }
-
-
-
 </style>

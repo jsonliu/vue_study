@@ -4,19 +4,17 @@
       <!--不需要这样修改-->
       <!--<x-header :left-options="{showBack:showBack,backText:''}" style="background-color:#d6000f;">{{tag}}</x-header>-->
       <x-header :left-options="{showBack:showBack,backText:backText}">
-
         <slot>
           {{title}}
         </slot>
-
         <div slot="left">
           <slot name="left"></slot>
         </div>
-
-        <div slot="right" @click="rightMore" style="width: 60px;height: 40px">
+        <div slot="right"
+             @click="rightMore"
+             style="width: 60px;height: 40px">
           <slot name="right"></slot>
         </div>
-
       </x-header>
     </header>
     <div class="nav-bar-box"></div>
@@ -24,57 +22,53 @@
 </template>
 
 <script type="text/ecmascript-6">
-  import { XHeader} from 'vux'
+  import { XHeader } from 'vux'
 
-  export default{
+  export default {
     name: 'AppHeader',
     components: {
       XHeader
     },
-    props:{
-      title:{
+    props: {
+      title: {
         type: String,
         default: ''
       },
-      showBack:{
+      showBack: {
         type: Boolean,
-        default(){
+        default () {
           return true
         }
       },
-      backText:{
-        type:String,
-        default(){
+      backText: {
+        type: String,
+        default () {
           return '返回'
         }
       },
       leftText: {
         type: String,
-        default() {
+        default () {
           return ''
         }
       },
       rightText: {
         type: String,
-        default() {
+        default () {
           return ''
         }
       }
-
     },
-    data (){
-      return{
+    data () {
+      return {
       }
     },
-
     methods: {
-      rightMore() {
+      rightMore () {
         this.$emit('rightPressed');
       }
     },
   }
 </script>
-
 <style lang="less" rel="stylesheet/less">
-
 </style>

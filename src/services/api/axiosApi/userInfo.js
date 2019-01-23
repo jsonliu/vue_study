@@ -5,19 +5,13 @@
 import http from '../../axios/axios'
 
 export default {
-
-  login(account,password){
-
+  login (account, password) {
     return http.post('user/login', {
       account: account,
       password: password
     })
-
   },
-  getUserInfo(){
-
+  getUserInfo () {
     return http.get('user/info')
-
   }
-
 }
