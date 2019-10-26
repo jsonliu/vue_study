@@ -2,7 +2,7 @@
 import Vue from 'vue'
 import App from './App'
 import router from './router'
-// 测试......哈哈哈
+// 测试......哈哈哈哈哈哈
 import 'element-ui/lib/theme-default/index.css'
 // import ElementUI from 'element-ui'
 // Vue.use(ElementUI)
